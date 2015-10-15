@@ -1,0 +1,57 @@
+{% load staticfiles %}  <!-- load the static page -->
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="{% static "pin.css" %}" >
+        <link href = "{% static "css/jquery.dataTables_themeroller.css" %}" rel="stylesheet" type="text/css">
+        <link href = "{% static "css/jquery.dataTables.css" %}" rel="stylesheet" type="text/css">
+        <link href = "{% static "css/jquery.dataTables.min.css" %}" rel="stylesheet" type="text/css">
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
+        
+    </head>
+
+	<h2>News</h2>
+	<div id = "main_container">
+		<div id = "form_container">
+           <form  id = "myForm" name = "myform"  action='.' method="POST">{% csrf_token %}
+
+          </form>
+         </div>
+         <div id = "body_container">
+	         <div id = "result">
+
+	         	<table id = "example" class="row-border hover order-column" cellspacing="0" width="100%" > 
+	              <thead>
+	              		
+                        <th>News URL</th>
+                        <th>News</th>
+                        <th>Posted On</th> 
+                        <th>Upvotes</th>
+                        <th>Comments</th>
+	              </thead>
+	               <tbody>
+		         {% for i in total_data %} 
+		          <tr>   
+		          	  
+		              <td>{{i.news_url}}</td>
+		              <td>{{i.content}}</td>
+		              <td>{{i.upvotes}}</td>
+		              <td>{{i.posted_on}}</td>
+		              <td>{{i.comments}}</td>
+		          </tr>
+		         {% endfor%}
+	             </tbody>
+		      </table>
+	         </div>
+          
+         
+         </div>
+         
+     </div>
+     
+     
+	
+
+</html>
