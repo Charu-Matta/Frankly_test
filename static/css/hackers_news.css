@@ -35,8 +35,18 @@ td.highlight {
     background-color: #EED5B7!important;
 }
 
-.button_class{
-	margin-left:60px;
+
+#button{
+	background-color: #3779bc;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 4px;
+    margin-top: -15px !important;
+    width: 130px;
+	
+}
+#delete_button{
+	float:right;
 }
 
 /* #button_id {
@@ -70,7 +80,5 @@ td.highlight {
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #aade7c;
-}.button_class:active {
-	position:relative;
-	top:1px;
+	
 } */

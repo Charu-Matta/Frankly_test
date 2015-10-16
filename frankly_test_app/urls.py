@@ -10,7 +10,7 @@ urlpatterns = patterns('',
 #     url(r'^finance/$', TemplateView.as_view(template_name="finance.html"), name='finance'),
 #      url(r'^admin/', include(admin.site.urls)),
      url(r'^accounts/', include('registration.backends.simple.urls')),
-     url(r'^hackers_news/$', hackers_news, name='hackers_news'),
+     url(r'^hackers_news/$', fetch_data_db, name='hackers_news'),
 #      url(r'', custom_login, name='custom_login'),
     
  )
